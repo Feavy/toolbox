@@ -19,7 +19,11 @@ RUN \
     pip install yq && \
     wget https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz && \
     tar -xf node-v$NODE_VERSION-linux-x64.tar.xz && \
-    mv node-v$NODE_VERSION-linux-x64 /usr/local/nodejs
+    mv node-v$NODE_VERSION-linux-x64 /usr/local/nodejs && \
+    curl -LO https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.txt)/bin/linux/$PLATFORM/kubectl && \
+    chmod +x kubectl && \
+    mv kubectl /usr/local/bin/kubectl
+    
 
 WORKDIR /root
 
