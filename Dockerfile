@@ -21,4 +21,6 @@ RUN \
     tar -xf node-v$NODE_VERSION-linux-x64.tar.xz && \
     mv node-v$NODE_VERSION-linux-x64 /usr/local/nodejs
 
+WORKDIR /root
+
 ENTRYPOINT ["/bin/bash"]
